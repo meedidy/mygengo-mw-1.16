@@ -2,7 +2,7 @@
 
 require_once(dirname(__FILE__) . '/database.inc');
 
-define('MYGENGO_URL_BASE','http://api.sandbox.mygengo.com/v1/');
+define('MYGENGO_URL_BASE','http://api.mygengo.com/v1/');
 
 class myGengoApi {
 
