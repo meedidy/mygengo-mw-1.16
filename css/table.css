@@ -1,0 +1,23 @@
+.tgt-lang-table tbody tr, .tgt-lang-table tbody tr td, .tgt-lang-table thead td
+{ 
+	border-width: 1px; 
+	border-style: solid; 
+	border-color: #728fab;
+}
+
+.tgt-lang-table
+{
+	width: 700px;
+	border-collapse: collapse;
+}
+
+.tgt-lang-table tbody td, .tgt-lang-table thead td
+{
+	padding: 3px 7px 2px 7px;
+}
+
+.tgt-lang-table thead
+{
+	background: #dfeaf4;
+}
+	

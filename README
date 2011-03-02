@@ -1,0 +1,47 @@
+myGengo Plugin for Mediawiki
+Copyright (C) 2011, see LICENSE
+
+=== Installation
+Just unpack the zip into your (mediawiki root)/extenstions directory and add
+'require_once("$IP/extensions/mygengo/mygengo.php");'
+to your LocalSettings.php.
+The extenstion needs two tables in your Mediawiki database. Add them with
+mysql -u (mw user) -p (mw database) < (mediawiki)/extensions/mygengo/schema.sql
+or use myPhpAdmin and import the schema.sql schema.
+
+=== Configuration
+The extension is configured with 3 variables:
+
+$wgMgApiKey        String. Your public API key. You'll find it on you Account page at mygengo.com
+$wgMgPrivateKey    String. Your secret key. Can be found in the same place.
+$wgMgUsers         Array. Can be used on (semi) public wikis to allow only certian people to submit/administer
+                   translation jobs. If the array is empty (the default) everybody has access. 
+									 Add usernames to explity whitelist people. This will automaticly pervent everybody else
+									 accessing the translation dashboard in Special:MyGengo.
+									 ATTENTION: if you use the <dashboard /> tag (see below) blacklisted users will still see your translation jobs
+									 but won't be able to view/reject/approve them.
+
+A minimal configuration consits of $wgMgApiKey and $wgMgPrivateKey:
+
+// enable myGengo translation service
+require_once("$IP/extensions/mygengo/mygengo.php");
+$wgMgApiKey = "<api key>";
+$wgMgPrivateKey = "<private key>";
+
+On your myGengo Account page set the 'Default Callback URL' to 'http://<domain>/<mw root>/index.php/Special:MyGengo?page=callback'. Back
+on the wiki navigate to 'Special:MyGengo' and click 'Rebuild Database'.
+
+== Translate
+The extenstion adds the Special:MyGengoTranslate page to your wiki (look under 'Special Pages'). Here you can
+submit translation jobs to myGengo. Or send whole wiki pages by clicking the 'translate' tab.
+
+== Administer
+To administer your translation jobs load the Special:MyGengo (w/o ..Translate!) to see the dashboard.
+Depending on the status of the job you can review, comment on, view or cancel jobs with the respective links on it.
+
+You can also add the dashboard on other pages with the <dashboard /> tag extension.
+
+Delete the local database of jobs and fetch a fresh one with the 'Rebuild database' link.
+Use this sparingly, only if the system somehow desychonized with myGengo!
+
+Mar. 2011

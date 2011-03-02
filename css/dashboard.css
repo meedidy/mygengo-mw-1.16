@@ -1,0 +1,18 @@
+.dashboard-job
+{
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid #aaa;
+}
+
+.dashboard-job tbody tr td
+{
+	padding: 0.2em 0.8em 0.2em 0.8em;
+}
+
+.dashboard-job-0 { width: 7em; }
+.dashboard-job-1 { width: 5em; }
+.dashboard-job-2 { width: 9.5em; }
+.dashboard-job-3 { width: 7em; }
+.dashboard-job-4 { width: 17em; }
+.dashboard-job-5 { width: 3.2em; text-align: right; }

@@ -1,0 +1,15 @@
+.thread
+{
+	margin: 0.8em;
+	width: 50em;
+}
+
+.thread-user { background: #eee; }
+
+.thread-body td
+{ 
+	font-size: large; 
+	margin: 0.3em;
+}
+.thread-sig { text-align: right; }
+
