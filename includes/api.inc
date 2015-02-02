@@ -20,6 +20,7 @@ static public function get($url,$opts)
 
 	$req = HttpRequest::factory($url . '?' . http_build_query($opts),array('method' => 'GET'));
 	$req->setHeader('Accept','application/json');
+	$req->setHeader('User-Agent','myGengo MediaWiki Plugin; Version 1.16; https://github.com/meedidy/mygengo-mw-1.16;');
 	if($req->execute()->isOK())
 		return $req->getContent();
 	else
@@ -40,6 +41,7 @@ static public function post($url,$opts)
 		'method' => 'POST',
 		'postData' => http_build_query($opts)));
 	$req->setHeader('Accept','application/json');
+	$req->setHeader('User-Agent','myGengo MediaWiki Plugin; Version 1.16; https://github.com/meedidy/mygengo-mw-1.16;');
 	$req->execute()->isOK();
 	return $req->getContent();
 }
